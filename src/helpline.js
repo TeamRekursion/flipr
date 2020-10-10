@@ -1,7 +1,7 @@
 import React from 'react';
 import './helpline.css';
-import phone from './Assets/bx-phone.png'
-import wave from './Assets/wave.png'
+import phone from './Assets/phone.png'
+// import wave from './Assets/wave.png'
 import { GetHealthData } from  './utils/helpline'
 import {getState} from "./utils/StateUsingIP";
 
@@ -17,7 +17,7 @@ class helpline extends React.Component{
         this.state.State = await getState();
         let data = await GetHealthData()
         let StateData = (data.filter(e => {
-            if (e.loc == this.state.State) {
+            if (e.loc === this.state.State) {
                 return true
             }
             return false
@@ -46,7 +46,7 @@ class helpline extends React.Component{
                     </form>
                 </div>
                 {(this.state.StateData) ? (<div className="large-card">
-                    <img src={wave} alt="wave" className="wave"/>
+                    {/* <img src={wave} alt="wave" className="wave"/> */}
                     <h3 className="text-head">{this.state.StateData.loc}</h3>
                     <br/>
                     <br/>
