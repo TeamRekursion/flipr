@@ -108,7 +108,7 @@ class college extends React.Component {
                             <select name="type" className="searchbox1" value={this.state.selectValue} onChange={this.handleChange1} >
                                 <option value="All">All</option>
                                 <option value="Society">Society</option>
-                                <option value="Govt.">Govt.</option>
+                                <option value="Govt">Govt</option>
                                 <option value="Trust">Trust</option>
                                 <option value="University">University</option>
                             </select>
