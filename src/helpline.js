@@ -31,14 +31,15 @@ class helpline extends React.Component{
 
     }
 
-    filterCallBack = (e) => {
-        const { elements } = e.loc;
+    filterCallBack = (element) => {
         const { filterStr } = this.state;
-    
-        const filteredElements = elements
-          .filter(e => e.includes(filterStr))
-          .map(e => <li>{ e }</li>)
-          console.log( {filteredElements});
+        const {loc} = element;
+        let regX = new RegExp(filterStr, "i")
+        if (filterStr)
+            return (regX.test(loc));
+        else
+            return true
+        
     }
 
 
@@ -50,7 +51,7 @@ class helpline extends React.Component{
             <div className="container">
                 <div className="box">
                     <form>
-                        <input type="text" placeholder="Search.." name="search" className="searchbox" value={ filterStr } onChange={ e => this.setState({ filterStr: e.target.value }) , this.filterCallBack} />
+                        <input type="text" placeholder="Search.." name="search" className="searchbox" value={ filterStr } onChange={ e => this.setState({ filterStr: e.target.value }) } />
                         {/* <button className="but">search</button> */}
                     </form>
                 </div>
