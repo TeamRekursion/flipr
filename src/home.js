@@ -44,7 +44,7 @@ class helpline extends React.Component{
                     <br/>
                     <br/>
                     <br/>
-                    <h1 className="suc">A all in one portal to stay<br/> updated about the <br/>pandemic</h1>
+                    <h1 className="suc">All in one portal to stay<br/> updated about the <br/>pandemic</h1>
                     <br/>
                     <br/>
                     <Link to="/analytics">
