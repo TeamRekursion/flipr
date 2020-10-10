@@ -10,6 +10,7 @@ class helpline extends React.Component{
         super(props);
         this.state = {
             State: 'Delhi',
+            filterStr : null
         }
     }
 
@@ -31,17 +32,25 @@ class helpline extends React.Component{
     }
 
     filterCallBack = (e) => {
-        return true
+        const { elements } = e.loc;
+        const { filterStr } = this.state;
+    
+        const filteredElements = elements
+          .filter(e => e.includes(filterStr))
+          .map(e => <li>{ e }</li>)
+          console.log( {filteredElements});
     }
 
 
     render(){
+        
+        var filterStr;
         return(
             <>
             <div className="container">
                 <div className="box">
                     <form>
-                        <input type="text" placeholder="Search.." name="search" className="searchbox"/>
+                        <input type="text" placeholder="Search.." name="search" className="searchbox" value={ filterStr } onChange={ e => this.setState({ filterStr: e.target.value }) , this.filterCallBack} />
                         {/* <button className="but">search</button> */}
                     </form>
                 </div>
