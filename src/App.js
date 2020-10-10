@@ -8,13 +8,22 @@ import Analytics from './analytics';
 import College from './college';
 import Home from './home';
 import Hospital from './hospital';
-// import home from './Assets/home';
+import home from './Assets/home.png';
 import homeactive from './Assets/home-active.png';
 import analytics from './Assets/analytics.png';
-import state from './Assets/state.png';
-// import hospital from './Assets/hospital.png';
+import analyticsA from './Assets/bx-line-chart.png';
+// import state from './Assets/state.png';
+// import hospitals from './Assets/hospital.png';
+import phone from './Assets/phone.png';
+import phoneA from './Assets/bx-phone.png';
+// import helplines from './Assets/helpline.png';
 import building from './Assets/building.png';
+import buildingA from './Assets/bx-building-house.png';
 import college from './Assets/college.png';
+import logo from './Assets/logo.png';
+import col from './Assets/hos.png';
+// import helpline from './helpline';
+// import hospital from './hospital';
 
 function App() {
   return (
@@ -22,7 +31,9 @@ function App() {
     <div className="App">
       <div className="primary-nav">
 	    <nav role="navigation" className="menu">
-       <Link to="/" exact className="logo">logo</Link>
+       <Link to="/" exact className="logo">
+         <img src={logo} alt="logo" className="slog"/>
+       </Link>
       {/*<ul className="gg">
         <li className="tab">a</li>
         <li className="tab">a</li>
@@ -35,27 +46,23 @@ function App() {
 			<ul className="menu-dropdown">
 
         <NavLink exact to="/" className= "gg" activeClassName="active">
-				  <li><a href={"/#"}>Home</a><span className="icon"><img src={homeactive} className="log" alt="home"></img></span></li>
+				  <li><a href={"/#"}>Home</a><span className="icon"><img src={home} className="log" alt="home"/><img src={homeactive} className="log-active" alt="home"/></span></li>
         </NavLink>
       
-        <NavLink exact to="/analytics" className= "gg" activeClassName="gg active">
-				  <li><a href={"/#"}>Analytics</a><span className="icon"><img src={analytics} alt="home" className="log"></img></span></li>
+        <NavLink exact to="/analytics" className= "gg" activeClassName="active">
+				  <li><a href={"/#"}>Analytics</a><span className="icon"><img src={analytics} className="log" alt="home"/><img src={analyticsA} className="log-active" alt="home"/></span></li>
         </NavLink>
 
-        <NavLink to="/helpline" className= "gg" activeClassName="gg active">
-				  <li><a href={"/#"}>State Helpline</a><span className="icon"><img src={state} alt="home" className="log"></img></span></li>
+        <NavLink to="/helpline" className= "gg" activeClassName="active">
+				  <li><a href={"/#"}>State Helpline</a><span className="icon"><img src={phone} className="log" alt="home"/><img src={phoneA} className="log-active" alt="home"/></span></li>
         </NavLink>
 
-        {/* <NavLink to="/hospitals" className= "gg" activeClassName="gg active">
-				  <li><a href={"/#"}>Healthcare Dashboard</a><span className="icon"><img src={hospital} alt="home" className="log"></img></span></li>
-        </NavLink> */}
-
-        <NavLink to="/hospitals" className= "gg" activeClassName="gg active">
-				  <li><a href={"/#"}>Hospitals</a><span className="icon"><img src={building} alt="home" className="log"></img></span></li>
+        <NavLink to="/hospitals" className= "gg" activeClassName="active">
+				  <li><a href={"/#"}>Hospitals</a><span className="icon"><img src={building} className="log" alt="home"/><img src={buildingA} className="log-active" alt="home"/></span></li>
         </NavLink>
 
-        <NavLink to="/colleges" className= "gg" activeClassName="gg active">
-				  <li><a href={"/#"}>Medical Colleges</a><span className="icon"><img src={college} alt="home" className="log"></img></span></li>
+        <NavLink to="/colleges" className= "gg" activeClassName="active">
+				  <li><a href={"/#"}>Medical Colleges</a><span className="icon"><img src={college} className="log" alt="home"/><img src={col} className="log-active" alt="home"/></span></li>
         </NavLink>
 
 				{/* <li className="menu-hasdropdown">
