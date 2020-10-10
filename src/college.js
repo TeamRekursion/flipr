@@ -120,18 +120,17 @@ class college extends React.Component {
                     </div>
                     {(this.state.StateData) ? (<div className="grid">
                         <div className="large-card1">
-                            {/* <img src={wave} alt="wave" className="wave1"/> */}
-                            <h3 className="text-head">{this.state.StateData["state"]}</h3>
+                            <h3 className="text-head1">{this.state.StateData["state"]}</h3>
                             <h3 className="text-help">{this.state.StateData["name"]}</h3>
                             <br />
                             <br />
                             <span className="num">
                                 Type:
-                    </span>
+                            </span>
                             <span className="number">{this.state.StateData["ownership"]}</span>
                         </div>
-                        <div >
-                            <div className="small-card">
+                        <div style={{marginLeft:"-150px", width:"90%",height: "100%"}}>
+                            <div className="small-card" style={{height:"100px"}}>
                                 <div>
                                 <img src={h3} alt="h1" className="foff1"/>
                                 </div>
@@ -139,7 +138,7 @@ class college extends React.Component {
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban
                                         Hospitals
                                     </div>
-                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["admissionCapacity"]}</div>
+                                    <div style={{color: "#E78F36", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["admissionCapacity"]}</div>
                                 </div>
                             </div>
                             {/* <div className="right-card">
@@ -154,13 +153,13 @@ class college extends React.Component {
                                     {this.state.StateData["admissionCapacity"]}
                                 </span>
                             </div> */}
-                            <div className="small-card">
+                            <div className="small-card" style={{height:"100px"}}>
                                 <div>
                                 <img src={bed} alt="h1" className="foff2"/>
                                 </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total Beds</div>
-                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["hospitalBeds"]}</div>
+                                    <div style={{color: "#E78F36", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["hospitalBeds"]}</div>
                                 </div>
                             </div>
                             {/* <div className="right-card">
