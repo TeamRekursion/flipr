@@ -2,15 +2,38 @@ import React from 'react';
 import './college.css';
 // import phone from './Assets/bx-phone.png'
 import wave from './Assets/wave.png'
-
+import {getHospital} from './utils/hospitals'
+import {getState} from './utils/StateUsingIP'
 class college extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-
+            State: 'Delhi'
         }
     }
+
+    async componentDidMount() {
+        this.state.State = await getState();
+        let data = await getHospital()
+        let StateData = (data.filter(e => {
+            if (e.state == this.state.State) {
+                return true
+            }
+            return false
+        }))[0]
+
+        this.setState({
+            collegeData : data,
+            StateData
+        })
+    }
+    filterCallBack = (e) => {
+        return true
+    }
+
+
     render(){
+        console.log(this.state)
         return(
             <>
             <div className="container">
@@ -66,46 +89,46 @@ class college extends React.Component{
                         {/* <button className="but">search</button> */}
                     </form>
                 </div>
-                <div className="grid">
-                <div className="large-card1">
-                <img src={wave} alt="wave" className="wave1"/>
-                    <h3 className="text-head">Tamil Nadu</h3>
-                    <h3 className="text-help">College Name</h3>
-                    <br/>
-                    <br/>
-                    <span className="num">
+                {(this.state.StateData) ? (<div className="grid">
+                    <div className="large-card1">
+                        <img src={wave} alt="wave" className="wave1"/>
+                        <h3 className="text-head">{this.state.StateData["state"]}</h3>
+                        <h3 className="text-help">{this.state.StateData["name"]}</h3>
+                        <br/>
+                        <br/>
+                        <span className="num">
                         Type:
                     </span>
-                    <span className="number">Government</span>
-                </div>
-                <div>
-                    <div className="right-card">
+                        <span className="number">{this.state.StateData["ownership"]}</span>
+                    </div>
+                    <div>
+                        <div className="right-card">
                         <span className="im">
                             img.
                         </span>
-                        <span style={{color:"white"}}>
+                            <span style={{color: "white"}}>
                             Admission capacity:
                         </span>
-                        <br/>
-                        <span style={{color:"#E78F36", fontWeight:"700", fontSize:"20px",marginLeft:"50px"}}>
-                            375
+                            <br/>
+                            <span style={{color: "#E78F36", fontWeight: "700", fontSize: "20px", marginLeft: "50px"}}>
+                            {this.state.StateData["admissionCapacity"]}
                         </span>
-                    </div>
-                    <div className="right-card">
+                        </div>
+                        <div className="right-card">
                     <span className="im">
                             img.
                         </span>
-                        <span style={{color:"white"}}>
+                            <span style={{color: "white"}}>
                             Hospital Beds:
                         </span>
-                        <br/>
-                        <span style={{color:"#E78F36", fontWeight:"700", fontSize:"20px",marginLeft:"50px"}}>
-                            456
+                            <br/>
+                            <span style={{color: "#E78F36", fontWeight: "700", fontSize: "20px", marginLeft: "50px"}}>
+                            {this.state.StateData["hospitalBeds"]}
                         </span>
+                        </div>
                     </div>
                 </div>
-                </div>
-                
+                ) : null}
                 <div className="table">
                         <table>
                             <th className="left1">State</th>
@@ -114,22 +137,23 @@ class college extends React.Component{
                             <th className="mid">Ownership</th>
                             <th className="mid">Capacity</th>
                             <th className="right1">Beds</th>
-                            <tr>
-                                <td>1</td>
-                                <td>Punjab</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Haryana</td>
-                                <td>9855363731</td>
-                                <td>9855363731</td>
-                                <td>9855363731</td>
-                                <td>9855363731</td>
-                            </tr>
+
+                            {(this.state.collegeData) ? (this.state.collegeData).map(
+                                (e, index) => {
+                                    if (this.filterCallBack(e)) {
+                                        return (
+                                            <tr>
+                                                <td>{e.state}</td>
+                                                <td>{e.name}</td>
+                                                <td>{e.city}</td>
+                                                <td>{e.ownership}</td>
+                                                <td>{e.admissionCapacity}</td>
+                                                <td>{e.hospitalBeds}</td>
+                                            </tr>
+                                        )
+                                    }
+                                }
+                            ) : null}
                         </table>
 
                     </div>

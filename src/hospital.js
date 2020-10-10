@@ -4,83 +4,133 @@ import './hospital.css'
 // import phone from './Assets/bx-phone.png'
 // import wave from './Assets/wave.png'
 
+import {getBeds} from './utils/hospitals'
+import {getState} from "./utils/StateUsingIP";
 class hospital extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            State: 'Delhi'
         }
     }
+
+    async componentDidMount() {
+        this.state.State = await getState();
+        let {regional, summary} = await getBeds()
+        let StateData = (regional.filter(e => {
+            if (e.state == this.state.State) {
+                return true
+            }
+            return false
+        }))[0]
+
+        this.setState({summary, regional, StateData})
+    }
+    filterCallBack = (e) => {
+        return true
+    }
+
     render(){
         return(
             <>
             <div className="container">
-                <h1 className="head">Tamil Nadu</h1>
-                <h4>Hospital Statistics</h4>
-                <div className="cards">
-                    <div>
-                        <div className="small-card">
-                            <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Rural Hospitals</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>456</div>
+                {(this.state.StateData) ? (<>
+                    <h1 className="head">{this.state.StateData["state"]}</h1>
+                    <h4>Hospital Statistics</h4>
+                    <div className="cards">
+                        <div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Rural
+                                        Hospitals
+                                    </div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["ruralHospitals"]}</div>
+                                </div>
+                            </div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Rural Beds</div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["ruralBeds"]}</div>
+                                </div>
                             </div>
                         </div>
-                        <div className="small-card">
-                        <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Rural Beds</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>456</div>
+                        <div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban
+                                        Hospitals
+                                    </div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["urbanHospitals"]}</div>
+                                </div>
+                            </div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban Beds</div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["urbanBeds"]}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total
+                                        Hospitals
+                                    </div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["totalHospitals"]}</div>
+                                </div>
+                            </div>
+                            <div className="small-card">
+                                <div>img</div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total Beds</div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["totalBeds"]}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="small-carder">
+                                <div style={{
+                                    color: "#5A80FF",
+                                    fontSize: "25px",
+                                    fontWeight: "600",
+                                    marginLeft: "50px"
+                                }}>India
+                                </div>
+                                <table className="stab">
+                                    <tr>
+                                        <td> Rural Hospitals</td>
+                                        <td> {this.state.summary["ruralHospitals"]}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Rural Beds</td>
+                                        <td> {this.state.summary["ruralBeds"]}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Urban Hospitals</td>
+                                        <td> {this.state.summary["urbanHospitals"]}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Urban Beds</td>
+                                        <td> {this.state.summary["urbanBeds"]}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Total Hospitals</td>
+                                        <td> {this.state.summary["totalHospitals"]}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Beds</td>
+                                        <td>{this.state.summary["totalBeds"]}</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="small-card">
-                        <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Urban Hospitals</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>4567</div>
-                            </div>
-                        </div>
-                        <div className="small-card">
-                        <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Urban Beds</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>3456</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="small-card">
-                        <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Total Hospitals</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>1000</div>
-                            </div>
-                        </div>
-                        <div className="small-card">
-                        <div>img</div>
-                            <div className="wh">
-                                <div style={{color:"white", fontWeight:"600",marginTop:"10px"}}>Total Beds</div>
-                                <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600"}}>10181</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="small-carder">
-                        <div style={{color:"#5A80FF",fontSize:"25px", fontWeight:"600", marginLeft:"50px"}}>India</div>
-                        <table className="stab">
-                            <tr>
-                               <td> Total Hospitals</td>
-                               <td> 1000</td>
-                            </tr>
-                            <tr>
-                               <td> Total Beds</td>
-                               <td> 20000</td>
-                            </tr>
-                        </table>
-                        </div>
-                    </div>
-                </div>
+                </>): null}
                 <div className="table">
                         <table>
                         <th className="left2">State</th>
@@ -88,23 +138,24 @@ class hospital extends React.Component{
                             <th className="mid2">Rural Beds</th>
                             <th className="mid2">Urban Hospitals</th>
                             <th className="mid2">Urban Beds</th>
+                            <th className="mid2">Total Hospitals</th>
                             <th className="right2">Total Beds</th>
-                            <tr>
-                                <td>1</td>
-                                <td>Punjab</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                                <td>8360407815</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Haryana</td>
-                                <td>Haryana</td>
-                                <td>Haryana</td>
-                                <td>Haryana</td>
-                                <td>9855363731</td>
-                            </tr>
+
+
+                                { (this.state.regional) ? (this.state.regional.map(
+                                    (e) => {
+                                        return (<tr>
+                                            <td>{e["state"]}</td>
+                                            <td>{e["ruralHospitals"]}</td>
+                                            <td>{e["ruralBeds"]}</td>
+                                            <td>{e["urbanHospitals"]}</td>
+                                            <td>{e["urbanBeds"]}</td>
+                                            <td>{e["totalHospitals"]}</td>
+                                            <td>{e["totalBeds"]}</td>
+                                        </tr>)
+                                    }
+                                )) : null}
+
                         </table>
 
                     </div>

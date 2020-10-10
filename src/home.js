@@ -12,17 +12,17 @@ class helpline extends React.Component{
         }
     }
     componentDidMount() {
-        const requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-        console.log("nj")
-        fetch("https://ifconfig.co/json", requestOptions)
-    .then(response => response.json())
-    .then(result => 
-        this.setState({state: result.region_name})
-        )
-    .catch(error => console.log('error', error));
+        // const requestOptions = {
+        //     method: 'GET',
+        //     redirect: 'follow'
+        // };
+    //     console.log("nj")
+    //     fetch("https://ifconfig.co/json", requestOptions)
+    // .then(response => response.json())
+    // .then(result =>
+    //     this.setState({state: result.region_name})
+    //     )
+    // .catch(error => console.log('error', error));
     }
     render(){
         return(

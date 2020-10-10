@@ -28,22 +28,22 @@ import col from './Assets/hos.png';
 class App extends React.Component{
   constructor(props) {
       super(props);
-      this.state = {
-
-      }
+      this.state = {}
   }
-  componentDidMount() {
-      const requestOptions = {
-          method: 'GET',
-          redirect: 'follow'
-      };
-      console.log("nj")
-      fetch("https://ifconfig.co/json", requestOptions)
-  .then(response => response.json())
-  .then(result => 
-      this.setState({state: result.region_name})
-      )
-  .catch(error => console.log('error', error));
+  async componentDidMount() {
+    let response;
+
+          // try {
+          //     response = await fetch("https://ifconfig.co/json" );
+          //     let responseJSON = await response.json()
+          //     this.setState({
+          //         state: responseJSON.region_name,
+          //     })
+          //
+          // } catch (e) {
+          // }
+    this.setState({state: 'Delhi'});
+    console.log(this.state.state)
   }
   render(){
   return (
@@ -109,8 +109,8 @@ class App extends React.Component{
 </div>
     </div>
     <Switch>
-      <Route path="/" exact component={Home}/>
-      <Route path="/analytics" component={Analytics}/>
+      <Route path="/" exact component={Home}  />
+      <Route path="/analytics" component={Analytics} />
       <Route path="/helpline" component={Helpline}/>
       <Route path="/hospitals" component={Hospital}/>
       <Route path="/colleges" component={College}/>
