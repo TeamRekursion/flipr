@@ -469,7 +469,10 @@ code, kbd, tt, var {
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
-
+.gand{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;

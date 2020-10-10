@@ -8,6 +8,7 @@ import Analytics from './analytics';
 import College from './college';
 import Home from './home';
 import Hospital from './hospital';
+import Notification from './notification';
 import home from './Assets/home.png';
 import homeactive from './Assets/home-active.png';
 import analytics from './Assets/analytics.png';
@@ -114,6 +115,7 @@ class App extends React.Component{
       <Route path="/helpline" component={Helpline}/>
       <Route path="/hospitals" component={Hospital}/>
       <Route path="/colleges" component={College}/>
+      <Route path="/notification" component={Notification}/>
     </Switch>
     </Router>
   );
