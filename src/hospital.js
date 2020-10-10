@@ -18,7 +18,7 @@ class hospital extends React.Component{
         this.state.State = await getState();
         let {regional, summary} = await getBeds()
         let StateData = (regional.filter(e => {
-            if (e.state == this.state.State) {
+            if (e.state === this.state.State) {
                 return true
             }
             return false
@@ -102,7 +102,7 @@ class hospital extends React.Component{
                                 }}>India
                                 </div>
                                 <table className="stab">
-                                    <tr>
+                                    {/* <tr>
                                         <td> Rural Hospitals</td>
                                         <td> {this.state.summary["ruralHospitals"]}</td>
                                     </tr>
@@ -117,7 +117,7 @@ class hospital extends React.Component{
                                     <tr>
                                         <td> Urban Beds</td>
                                         <td> {this.state.summary["urbanBeds"]}</td>
-                                    </tr>
+                                    </tr> */}
                                     <tr>
                                         <td> Total Hospitals</td>
                                         <td> {this.state.summary["totalHospitals"]}</td>
