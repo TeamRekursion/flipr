@@ -120,7 +120,7 @@ const Analytics = () => {
         };
 
         console.log(payload)
-        let response = await fetch("http://apiflipprvithack.herokuapp.com/api/patients/fetch", options)
+        let response = await fetch("https://apiflipprvithack.herokuapp.com/api/patients/fetch", options)
         let jsonObj = await response.json()
         let patients = jsonObj["patients"]
         let dates_received = {};
