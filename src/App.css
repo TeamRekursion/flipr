@@ -108,19 +108,21 @@ body {
 }
 /* .active >li > span > .log{
   display:none;
-}
-.active > li > span > .log-active{
+} */
+
+
+.gg > li > span > .log-active{
   display:none;
 }
-.gg > li > span > .log-active{
+.active > li > span > .log-active{
   display:block;
+}
+.active > li > span > .log{
+  display:none;
 }
 .gg > li > span > .log{
   display:block;
-} */
-/* .gg > li > span > .log-active{
-  display:none;
-} */
+}
 .menu,
 .menu a,
 .menu a:visited {
@@ -157,6 +159,12 @@ body {
   top:4px;
   right: -9px;
 }
+.log-active{
+  position: absolute;
+  width:22px;
+  top:4px;
+  right: -9px;
+}
 
 
 .menu label {
@@ -176,6 +184,11 @@ input#menu[type="checkbox"] {
   display: none;
 }
 .gg{
+  background-color: #242424;
+  margin: 5px 10px 5px 10px;
+  border-radius: 8px;
+}
+.active{
   background-color: #242424;
   margin: 5px 10px 5px 10px;
   border-radius: 8px;
@@ -573,6 +586,10 @@ h4, .h4 {font-size: 1.2em;}
 
 @media (max-width:1139px){
   .log{
+    width:15px;
+    right:-18px;
+  }
+  .log-active{
     width:15px;
     right:-18px;
   }
