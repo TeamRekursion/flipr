@@ -5,14 +5,12 @@ import bg from './Assets/bg.png';
 // import wave from './Assets/wave.png'
 // import { GetHealthData } from  './utils/helpline'
 // import {getState} from "./utils/StateUsingIP";
-
+import {GetNotifications} from './utils/notification'
 class Notification extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            State: 'Delhi',
-            // filterStr : null
-        }
+        this.state = {}
+
     }
 
     async componentDidMount() {
@@ -29,7 +27,10 @@ class Notification extends React.Component{
         //     helpline: data,
         //     StateData
         // })
-
+        let notifications = await GetNotifications()
+        this.setState({
+            notifications,
+        })
     }
 
     // filterCallBack = (element) => {
@@ -57,38 +58,25 @@ class Notification extends React.Component{
                        
                     </form>
                 </div> */}
-                {(this.state.StateData) ? (<div className="large-card">
-                    <img src={bg} alt="wave" className="wave"/>
-                    <h3 className="text-head">{this.state.StateData.loc}</h3>
-                    <br/>
-                    <br/>
-                    <h3 className="text-help">Helpline number</h3>
-                    <span className="num">
-                        <img src={phone} alt="phone" className="ph"/>
-                    </span>
-                    <span className="number">{this.state.StateData.number}</span>
-                </div> ): null}
+                
                 <div className="table">
                         <table>
-                            <th className="left2">S no</th>
-                            {/* <th>Title</th> */}
+                            <th className="left2">Sl. No</th>
                             <th className="right2">Title</th>
-                            { (this.state.helpline) ? this.state.helpline.map(
+                            { (this.state.notifications) ? (this.state.notifications.map(
                                 (e, index) => {
-                                    if (this.filterCallBack(e)) {
+                                        const {title, link} =  e;
                                         return (
                                             <tr>
                                                 <td>{index+1}</td>
-                                                <td>{e["loc"]}</td>
-                                                <td>{e["number"]}</td>
+                                        <td><a href={link}>{title}</a></td>
                                             </tr>
                                         )
-                                    }
                                     return(
                                         null
                                     )
                                 }
-                            ) : null}
+                            ) ): null}
                         </table>
 
                     </div>
