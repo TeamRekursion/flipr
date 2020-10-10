@@ -3,6 +3,7 @@ import back from './Assets/back.png';
 import map from './Assets/map.png';
 import logo from './Assets/logo.png';
 import {Link} from 'react-router-dom';
+import bell from './Assets/bell.png';
 
 class helpline extends React.Component{
     constructor(props) {
@@ -32,6 +33,14 @@ class helpline extends React.Component{
                 <div className="gm">
                     <div className="no">
                     <img src={logo} alt="logo"/>
+                    <span>
+                    <Link to="/notification">
+                        
+                        <button className="fuc1"> <span>
+                        <img src={bell} alt="logo" className="bell"/>
+                        </span> Notifications!</button>
+                    </Link>
+                    </span>
                     <br/>
                     <br/>
                     <br/>
