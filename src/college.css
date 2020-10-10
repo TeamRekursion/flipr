@@ -75,6 +75,16 @@ option{
     overflow: hidden;
     
 }
+.cont{
+    height: 100vh;
+    overflow-y: hidden;
+    margin-left: 70px;
+}
+.gm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
 .large-card1{
     width:50%;
     /* border-style: solid;
@@ -104,6 +114,10 @@ option{
     margin-left: 35px;
     color: white;
 }
+.bac{
+    position: absolute;
+    opacity: 50%;
+}
 .number{
     font-weight: 400;
     font-size: 20px;
@@ -112,6 +126,12 @@ option{
 }
 .ph{
     width:18px;
+}
+.ma{
+    width:90%;
+    margin-top:150px;
+    z-index: 999999;
+
 }
 .wave{
     position: absolute;
