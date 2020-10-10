@@ -1,8 +1,8 @@
 import React from 'react';
 // import './helpline.css';
 import './hospital.css'
-import phone from './Assets/bx-phone.png'
-import wave from './Assets/wave.png'
+// import phone from './Assets/bx-phone.png'
+// import wave from './Assets/wave.png'
 
 class hospital extends React.Component{
     constructor(props) {
