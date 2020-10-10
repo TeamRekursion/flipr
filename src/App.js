@@ -31,7 +31,7 @@ class App extends React.Component{
       this.state = {}
   }
   async componentDidMount() {
-    let response;
+    // let response;
 
           // try {
           //     response = await fetch("https://ifconfig.co/json" );

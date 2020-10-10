@@ -72,6 +72,9 @@ class helpline extends React.Component{
                                             </tr>
                                         )
                                     }
+                                    return(
+                                        null
+                                    )
                                 }
                             ) : null}
                         </table>
