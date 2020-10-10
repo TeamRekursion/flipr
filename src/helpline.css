@@ -83,6 +83,12 @@
     margin-left:0;
     /* top:10px; */
 }
+.not{
+    color: #5A80FF;
+    font-size: 45px;
+    padding:60px;
+    font-weight: 600;
+}
 th{
     background-color: #49E6FF;
     height: 40px;
