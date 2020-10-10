@@ -114,7 +114,8 @@ class hospital extends React.Component{
                                     color: "#5A80FF",
                                     fontSize: "25px",
                                     fontWeight: "600",
-                                    marginLeft: "50px"
+                                    marginLeft: "50px",
+                                    paddingTop: "15px"
                                 }}>India
                                 </div>
                                 <table className="stab">

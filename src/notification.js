@@ -1,7 +1,7 @@
 import React from 'react';
 import './helpline.css';
-import phone from './Assets/phone.png';
-import bg from './Assets/bg.png';
+// import phone from './Assets/phone.png';
+// import bg from './Assets/bg.png';
 // import wave from './Assets/wave.png'
 // import { GetHealthData } from  './utils/helpline'
 // import {getState} from "./utils/StateUsingIP";
@@ -37,13 +37,13 @@ class Notification extends React.Component{
                                         const {title, link} =  e;
                                         return (
                                             <tr>
-                                                <td>{index+1}</td>
-                                        <td><a href={link}>{title}</a></td>
+                                                <td className="cha1">{index+1}</td>
+                                                <td><a href={link} className="cha">{title}</a></td>
                                             </tr>
                                         )
-                                    return(
-                                        null
-                                    )
+                                    // return(
+                                    //     null
+                                    // )
                                 }
                             ) ): null}
                         </table>
