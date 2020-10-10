@@ -37,7 +37,10 @@ class college extends React.Component {
             return (e.state === this.state.selectValue1)    
         }
         else if (this.state.selectValue != "All" && this.state.selectValue1 == "All") {
+            if (e.ownership != null)
             return (e.ownership.replace(".","") == this.state.selectValue)
+            else
+            return false    
         }
         else {
             return (e.ownership == this.state.selectValue && e.state == this.state.selectValue1)
