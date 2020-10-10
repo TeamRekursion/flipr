@@ -230,6 +230,20 @@ table{
     margin : 40px auto;
     
 }
+.foff{
+    width:55px;
+    padding: 20px 0px 0px 10px;
+
+}
+.foff1{
+    width:45px;
+    padding: 15px 0px 0px 13px;
+
+}
+.foff2{
+    width:45px;
+    padding: 15px 0px 0px 13px;
+}
   @media (max-width:1139px){
     .searchbox{
         width: 13rem;
