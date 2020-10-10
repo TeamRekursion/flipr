@@ -73,6 +73,20 @@ option{
     cursor: pointer;
     position: absolute;
   }
+  .fuc1{
+    /* margin:20px; */
+    
+    width:200px;
+    height: 50px;
+    color: #5A80FF;
+    background-color: #242424;
+    font-weight: 700;
+    border-style: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    right:50px;
+  }
   .slog{
       width:32px;
       float: right;
@@ -99,6 +113,14 @@ option{
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: white;
+}
+.bell{
+    width:15px;
+    position: absolute;
+    margin-left:-20px;
+    margin-top: 3px;
+    /* margin-right: 15px; */
+    /* margin-top:15px; */
 }
 .large-card1{
     width:50%;
@@ -200,7 +222,7 @@ th{
 }
 .grid{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 td{
     background-color: #242424;

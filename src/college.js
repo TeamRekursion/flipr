@@ -3,7 +3,9 @@ import './college.css';
 // import phone from './Assets/bx-phone.png'
 // import wave from './Assets/wave.png'
 import { getHospital } from './utils/hospitals'
-import { getState } from './utils/StateUsingIP'
+import { getState } from './utils/StateUsingIP';
+import h3 from './Assets/h3.png';
+import bed from './Assets/bed.png';
 class college extends React.Component {
     constructor(props) {
         super(props);
@@ -37,10 +39,7 @@ class college extends React.Component {
             return (e.state === this.state.selectValue1)    
         }
         else if (this.state.selectValue != "All" && this.state.selectValue1 == "All") {
-            if (e.ownership != null)
-            return (e.ownership.replace(".","") == this.state.selectValue)
-            else
-            return false    
+            return (e.ownership == this.state.selectValue)
         }
         else {
             return (e.ownership == this.state.selectValue && e.state == this.state.selectValue1)
@@ -111,7 +110,7 @@ class college extends React.Component {
                             <select name="type" className="searchbox1" value={this.state.selectValue} onChange={this.handleChange1} >
                                 <option value="All">All</option>
                                 <option value="Society">Society</option>
-                                <option value="Govt">Govt</option>
+                                <option value="Govt.">Govt.</option>
                                 <option value="Trust">Trust</option>
                                 <option value="University">University</option>
                             </select>
@@ -131,10 +130,21 @@ class college extends React.Component {
                     </span>
                             <span className="number">{this.state.StateData["ownership"]}</span>
                         </div>
-                        <div>
-                            <div className="right-card">
+                        <div >
+                            <div className="small-card">
+                                <div>
+                                <img src={h3} alt="h1" className="foff1"/>
+                                </div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban
+                                        Hospitals
+                                    </div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["admissionCapacity"]}</div>
+                                </div>
+                            </div>
+                            {/* <div className="right-card">
                                 <span className="im">
-                                    img.
+                                <img src={h3} alt="h1" className="foff1"/>
                         </span>
                                 <span style={{ color: "white" }}>
                                     Admission capacity:
@@ -143,8 +153,17 @@ class college extends React.Component {
                                 <span style={{ color: "#E78F36", fontWeight: "700", fontSize: "20px", marginLeft: "50px" }}>
                                     {this.state.StateData["admissionCapacity"]}
                                 </span>
+                            </div> */}
+                            <div className="small-card">
+                                <div>
+                                <img src={bed} alt="h1" className="foff2"/>
+                                </div>
+                                <div className="wh">
+                                    <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total Beds</div>
+                                    <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["hospitalBeds"]}</div>
+                                </div>
                             </div>
-                            <div className="right-card">
+                            {/* <div className="right-card">
                                 <span className="im">
                                     img.
                         </span>
@@ -155,7 +174,7 @@ class college extends React.Component {
                                 <span style={{ color: "#E78F36", fontWeight: "700", fontSize: "20px", marginLeft: "50px" }}>
                                     {this.state.StateData["hospitalBeds"]}
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     ) : null}
