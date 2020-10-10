@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
 import states from './statesList'
-
+import html2canvas from "html2canvas";
+import jspdf from "jspdf"
 //eslint-disable-next-line
 const addDays = (date, days) => {
     date = new Date(date);
@@ -173,6 +174,26 @@ const Analytics = () => {
     }
 
 
+    let div2PDF = e => {
+    const but = e.target;
+    but.style.display = "none";
+    let input = window.document.getElementsByClassName("ana")[0];
+
+    html2canvas(input).then(canvas => {
+      const img = canvas.toDataURL("image/png");
+      const pdf = new jspdf("l", "pt");
+      pdf.addImage(
+        img,
+        "png",
+        50,
+        50,
+        700,
+        436.912751679
+      );
+      pdf.save("chart.pdf");
+      but.style.display = "block";
+    });
+    }
 
     return(
         <>
@@ -224,7 +245,7 @@ const Analytics = () => {
                     <br/>
                     <br/>
                     <button onClick={fetchData} className="pur1">Update graph</button><br/>
-                    <button className="pur2">Download PDF</button>
+                    <button className="pur2" onClick={div2PDF}>Download PDF</button>
                     <button className="pur2">Send Email</button>
                 </div>
             </div>

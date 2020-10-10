@@ -14,50 +14,19 @@ class Notification extends React.Component{
     }
 
     async componentDidMount() {
-        // this.state.State = await getState();
-        // let data = await GetHealthData()
-        // let StateData = (data.filter(e => {
-        //     if (e.loc === this.state.State) {
-        //         return true
-        //     }
-        //     return false
-        // }))[0]
-        // console.log(this.state)
-        // this.setState({
-        //     helpline: data,
-        //     StateData
-        // })
         let notifications = await GetNotifications()
         this.setState({
             notifications,
         })
     }
 
-    // filterCallBack = (element) => {
-    //     const { filterStr } = this.state;
-    //     const {loc} = element;
-    //     let regX = new RegExp(filterStr, "i")
-    //     if (filterStr)
-    //         return (regX.test(loc));
-    //     else
-    //         return true
-        
-    // }
-
 
     render(){
         
-        // var filterStr;
         return(
             <>
             <div className="container">
                 <h1 className="not">Notifications</h1>
-                {/* <div className="box">
-                    <form>
-                        <input type="text" placeholder="Search.." name="search" className="searchbox" value={ filterStr } onChange={ e => this.setState({ filterStr: e.target.value }) } />
-                       
-                    </form>
-                </div> */}
                 
                 <div className="table">
                         <table>
