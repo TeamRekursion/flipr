@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
 import states from './statesList'
 import html2canvas from "html2canvas";
-import jspdf from "jspdf"
+import jspdf from "jspdf";
 //eslint-disable-next-line
 const addDays = (date, days) => {
     date = new Date(date);

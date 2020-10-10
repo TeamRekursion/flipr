@@ -500,7 +500,13 @@ em,
 i {
 	font-style: italic;
 }
-
+.cha{
+  text-decoration: none;
+  color: #5A80FF;
+}
+.cha1{
+  width:10%;
+}
 p.big {
 	font-size: 140%;
 	line-height: 1.3em;
