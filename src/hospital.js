@@ -6,6 +6,10 @@ import './hospital.css'
 
 import {getBeds} from './utils/hospitals'
 import {getState} from "./utils/StateUsingIP";
+import h1 from './Assets/h1.png';
+import h2 from './Assets/h2.png';
+import h3 from './Assets/h3.png';
+import bed from './Assets/bed.png';
 class hospital extends React.Component{
     constructor(props) {
         super(props);
@@ -40,7 +44,9 @@ class hospital extends React.Component{
                     <div className="cards">
                         <div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                    <img src={h1} alt="h1" className="foff"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Rural
                                         Hospitals
@@ -49,7 +55,9 @@ class hospital extends React.Component{
                                 </div>
                             </div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                    <img src={bed} alt="h1" className="foff2"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Rural Beds</div>
                                     <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["ruralBeds"]}</div>
@@ -58,7 +66,9 @@ class hospital extends React.Component{
                         </div>
                         <div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                <img src={h2} alt="h1" className="foff1"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban
                                         Hospitals
@@ -67,7 +77,9 @@ class hospital extends React.Component{
                                 </div>
                             </div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                <img src={bed} alt="h1" className="foff2"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban Beds</div>
                                     <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["urbanBeds"]}</div>
@@ -76,7 +88,9 @@ class hospital extends React.Component{
                         </div>
                         <div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                <img src={h3} alt="h1" className="foff"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total
                                         Hospitals
@@ -85,7 +99,9 @@ class hospital extends React.Component{
                                 </div>
                             </div>
                             <div className="small-card">
-                                <div>img</div>
+                                <div>
+                                <img src={bed} alt="h1" className="foff2"/>
+                                </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total Beds</div>
                                     <div style={{color: "#5A80FF", fontSize: "25px", fontWeight: "600"}}>{this.state.StateData["totalBeds"]}</div>

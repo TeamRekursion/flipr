@@ -1,6 +1,7 @@
 import React from 'react';
 import './helpline.css';
-import phone from './Assets/phone.png'
+import phone from './Assets/phone.png';
+import bg from './Assets/bg.png';
 // import wave from './Assets/wave.png'
 import { GetHealthData } from  './utils/helpline'
 import {getState} from "./utils/StateUsingIP";
@@ -56,7 +57,7 @@ class helpline extends React.Component{
                     </form>
                 </div>
                 {(this.state.StateData) ? (<div className="large-card">
-                    {/* <img src={wave} alt="wave" className="wave"/> */}
+                    <img src={bg} alt="wave" className="wave"/>
                     <h3 className="text-head">{this.state.StateData.loc}</h3>
                     <br/>
                     <br/>
