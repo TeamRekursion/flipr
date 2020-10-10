@@ -25,7 +25,27 @@ import col from './Assets/hos.png';
 // import helpline from './helpline';
 // import hospital from './hospital';
 
-function App() {
+class App extends React.Component{
+  constructor(props) {
+      super(props);
+      this.state = {
+
+      }
+  }
+  componentDidMount() {
+      const requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+      };
+      console.log("nj")
+      fetch("https://ifconfig.co/json", requestOptions)
+  .then(response => response.json())
+  .then(result => 
+      this.setState({state: result.region_name})
+      )
+  .catch(error => console.log('error', error));
+  }
+  render(){
   return (
     <Router>
     <div className="App">
@@ -98,5 +118,5 @@ function App() {
     </Router>
   );
 }
-
+};
 export default App;
