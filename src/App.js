@@ -1,8 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch , Route  } from 'react-router-dom';
+import { BrowserRouter as Router, Switch , Route ,NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import Helpline from './helpline';
+import Analytics from './analytics';
+import College from './college';
+import Home from './home';
+import Hospital from './hospital';
+// import home from './Assets/home';
+import homeactive from './Assets/home-active.png';
+import analytics from './Assets/analytics.png';
+import state from './Assets/state.png';
+// import hospital from './Assets/hospital.png';
+import building from './Assets/building.png';
+import college from './Assets/college.png';
 
 function App() {
   return (
@@ -10,35 +22,71 @@ function App() {
     <div className="App">
       <div className="primary-nav">
 	    <nav role="navigation" className="menu">
-		  <a href={"dscvit.com"} className="logotype">LOGO<span>TYPE</span></a>
+       <Link to="/" exact className="logo">logo</Link>
+      {/*<ul className="gg">
+        <li className="tab">a</li>
+        <li className="tab">a</li>
+        <li className="tab">a</li>
+        <li className="tab1">a</li>
+        <li className="tab1">a</li>
+      </ul> */}
+		  {/* <a href={"dscvit.com"} className="logotype">LOGO<span>TYPE</span></a> */}
 		  <div className="overflow-container">
 			<ul className="menu-dropdown">
-				<li><a href={"dscvit.com"}>Dashboard</a><span className="icon"><i className="fa fa-dashboard">D</i></span></li>
-				<li className="menu-hasdropdown">
-					<a href={"dscvit.com"}>Settings</a><span className="icon"><i className="fa fa-gear">S</i></span>
-					<label title="toggle menu" htmlFor="settings">
-        <span className="downarrow"><i className="fa fa-caret-down">T</i></span>
-      </label>
+
+        <NavLink exact to="/" className= "gg" activeClassName="active">
+				  <li><a href={"/#"}>Home</a><span className="icon"><img src={homeactive} className="log" alt="home"></img></span></li>
+        </NavLink>
+      
+        <NavLink exact to="/analytics" className= "gg" activeClassName="gg active">
+				  <li><a href={"/#"}>Analytics</a><span className="icon"><img src={analytics} alt="home" className="log"></img></span></li>
+        </NavLink>
+
+        <NavLink to="/helpline" className= "gg" activeClassName="gg active">
+				  <li><a href={"/#"}>State Helpline</a><span className="icon"><img src={state} alt="home" className="log"></img></span></li>
+        </NavLink>
+
+        {/* <NavLink to="/hospitals" className= "gg" activeClassName="gg active">
+				  <li><a href={"/#"}>Healthcare Dashboard</a><span className="icon"><img src={hospital} alt="home" className="log"></img></span></li>
+        </NavLink> */}
+
+        <NavLink to="/hospitals" className= "gg" activeClassName="gg active">
+				  <li><a href={"/#"}>Hospitals</a><span className="icon"><img src={building} alt="home" className="log"></img></span></li>
+        </NavLink>
+
+        <NavLink to="/colleges" className= "gg" activeClassName="gg active">
+				  <li><a href={"/#"}>Medical Colleges</a><span className="icon"><img src={college} alt="home" className="log"></img></span></li>
+        </NavLink>
+
+				{/* <li className="menu-hasdropdown">
+        <NavLink exact to="/hospitals" className= "menu__list-item menu__link" activeClassName="menu__list-item menu__link active">
+					<a href={"dscvit.com"}>Hospital</a><span className="icon"><i className="fa fa-gear"></i></span>
+          <label title="toggle menu" htmlFor="settings">
+            <span className="downarrow"><i className="fa fa-caret-down">T</i></span>
+          </label>
+          </NavLink>
+					
 					<input type="checkbox" className="sub-menu-checkbox" id="settings" />
 					<ul className="sub-menu-dropdown">
-						<li><a href={"dscvit.com"}>Profile</a></li>
-						<li><a href={"dscvit.com"}>Security</a></li>
-						<li><a href={"dscvit.com"}>Account</a></li>
+          <NavLink exact to="/hospitals" className= "menu__list-item menu__link" activeClassName="menu__list-item menu__link active">
+						<li><a href={"dscvit.com"}>Hospitals</a><span className="icon"><i className="fa fa-gear">H</i></span></li>
+          </NavLink>
+          <NavLink exact to="/colleges" className= "menu__list-item menu__link" activeClassName="menu__list-item menu__link active">
+						<li><a href={"dscvit.com"}>Medical Colleges</a><span className="icon"><i className="fa fa-gear">C</i></span></li>
+          </NavLink>
 					</ul>
-				</li>
-				<li><a href={"dscvit.com"}>Favourites</a><span className="icon"><i className="fa fa-heart">F</i></span></li>
-				<li><a href={"dscvit.com"}>Messages</a><span className="icon"><i className="fa fa-envelope">M</i></span></li>
+				</li> */}
 			</ul>
 		</div>
 	</nav>
 </div>
     </div>
     <Switch>
-      <Route path="/" exact component={Helpline}/>
-      <Route path="/analytics" component={Helpline}/>
+      <Route path="/" exact component={Home}/>
+      <Route path="/analytics" component={Analytics}/>
       <Route path="/helpline" component={Helpline}/>
-      <Route path="/hospitals" component={Helpline}/>
-      <Route path="/colleges" component={Helpline}/>
+      <Route path="/hospitals" component={Hospital}/>
+      <Route path="/colleges" component={College}/>
     </Switch>
     </Router>
   );
