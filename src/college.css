@@ -117,6 +117,7 @@ option{
 .text-head{
     font-weight: 400;
     font-size: 40px;
+    margin-top:-175px;
     margin-left: 35px;
     color: #fff;
 }
@@ -149,10 +150,11 @@ option{
 
 }
 .wave{
-    position: absolute;
-    width:63%;
-    margin-top:30px;
-    margin-left:-10px;
+    /* position: absolute; */
+    position: relative;
+    width:100%;
+    margin-top:-5px;
+    margin-left:0px;
     /* top:10px; */
 }
 .no{

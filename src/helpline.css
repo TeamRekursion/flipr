@@ -77,10 +77,10 @@
     width:18px;
 }
 .wave{
-    position: absolute;
-    width:63%;
-    margin-top:30px;
-    margin-left:-10px;
+    position: relative;
+    width:100%;
+    margin-top:100px;
+    margin-left:0;
     /* top:10px; */
 }
 th{
