@@ -1,0 +1,132 @@
+.head{
+    color: #5A80FF;
+    padding:70px 0px 0px 70px;
+    font-size: 40px;
+}
+h4{
+    color: grey;
+    padding:0px 0px 0px 70px;
+}
+.cards{
+    width: 90%;
+    /* border-style: solid;
+    border-color: white; */
+    margin-left:70px;
+    margin-top: 70px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+}
+.small-card{
+    /* border-style: solid;
+    border-color: white; */
+    margin: 10px;
+    height: 80px;
+    background-color: #242424;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+/* .wh{
+    color: ;
+} */
+.small-carder{
+    /* border-style: solid;
+    border-color: white; */
+    margin:10px;
+    height: 175px;
+    border-radius: 10px;
+    background-color: #242424;
+}
+.left2{
+    border-top-left-radius: 10px;
+    background-color: #5A80FF;
+}
+.right2{
+    border-top-right-radius: 10px;
+    background-color: #5A80FF;
+}
+.mid2{
+    background-color: #5A80FF;
+}
+table{
+    width:88%;
+    margin-left:75px;
+}
+.stab{
+    margin:0;
+    padding:0;
+}
+.hea{
+    color: #5A80FF;
+    font-size: 50px;
+    margin-left:100px;
+    padding-top: 50px;
+}
+.grim{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top:50px;
+    margin-left:100px;
+    height:70vh;
+    
+    /* margin:20px; */
+    /* padding:10px; */
+}
+.ana{
+    /* margin:20px; */
+    background-color: #242424;
+    border-radius: 30px;
+}
+.fil{
+    margin-left: 20px;
+    /* background-color: #242424; */
+    width:80%;
+    border-radius: 30px;
+
+}
+.searchbox2{
+    background-color: #242424;
+    color: white;
+    outline: none;
+    width:85%;
+    /* border-top-left-radius: 30px;
+    border-radius: 30px;
+    border-bottom-left-radius: 30px; */
+    padding:10px;
+    margin:10px;
+    padding-left:22px;
+    border-style: none;
+    box-shadow: 1px 1px 10px #000;
+    cursor: pointer;
+}
+.pur1{
+    margin:20px;
+    width:50%;
+    height: 50px;
+    color: white;
+    background-color: #5A80FF;
+    border-style: none;
+    border-radius: 8px;
+}
+.pur2{
+    margin:20px;
+    width:50%;
+    height: 50px;
+    color: #5A80FF;
+    background-color: transparent;
+    border-style:solid;
+    border-color: #5A80FF;
+    border-radius: 8px;
+}
+@media (max-width:1139px){
+     .cards{
+        grid-template-columns: 1fr;
+     }
+     .table{
+         width:150px;
+     }
+     table{
+         /* width:150px; */
+     }
+}
