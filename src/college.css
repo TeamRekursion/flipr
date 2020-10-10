@@ -100,7 +100,7 @@ option{
     /* margin-left: 250px; */
     border-radius: 50px;
     padding:20px;
-    background-color: #00a2bc;
+    background-color: #5A80FF;
     overflow: hidden;
     
 }
@@ -139,7 +139,14 @@ option{
 .text-head{
     font-weight: 400;
     font-size: 40px;
-    margin-top:-175px;
+    margin-top:-195px;
+    margin-left: 35px;
+    color: #fff;
+}
+.text-head1{
+    font-weight: 400;
+    font-size: 40px;
+    margin-top:0px;
     margin-left: 35px;
     color: #fff;
 }
@@ -211,7 +218,7 @@ option{
     padding:10px;
 }
 th{
-    background-color: #49E6FF;
+    background-color: #5A80FF;
     height: 40px;
     border-radius: 2px;
     padding-top:15px;
