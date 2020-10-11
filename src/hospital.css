@@ -68,7 +68,7 @@ table{
     grid-template-columns: 2fr 1fr;
     margin-top:50px;
     margin-left:100px;
-    height:70vh;
+    height:60vh;
     
     /* margin:20px; */
     /* padding:10px; */
@@ -101,7 +101,7 @@ table{
     cursor: pointer;
 }
 .pur1{
-    margin:20px;
+    margin:10px;
     width:50%;
     height: 50px;
     color: white;
@@ -110,7 +110,7 @@ table{
     border-radius: 8px;
 }
 .pur2{
-    margin:20px;
+    margin:10px;
     width:50%;
     height: 50px;
     color: #5A80FF;
@@ -118,6 +118,17 @@ table{
     border-style:solid;
     border-color: #5A80FF;
     border-radius: 8px;
+    outline: none;
+}
+.pur3{
+    width:30%;
+    height: 50px;
+    color: white;
+    background-color: #5A80FF;
+    border-style:solid;
+    border-color: #5A80FF;
+    border-radius: 8px;
+    outline: none;
 }
 @media (max-width:1139px){
      .cards{
