@@ -181,6 +181,7 @@ const Analytics = () => {
 
     html2canvas(input).then(canvas => {
       const img = canvas.toDataURL("image/png");
+      console.log(img)
       const pdf = new jspdf("l", "pt");
       pdf.addImage(
         img,
@@ -193,6 +194,16 @@ const Analytics = () => {
       pdf.save("chart.pdf");
       but.style.display = "block";
     });
+    }
+
+    let sendMail =  e => {
+        const but = e.target;
+    but.style.display = "none";
+    let input = window.document.getElementsByClassName("ana")[0];
+    html2canvas(input).then(canvas => {
+        const img = canvas.toDataURL("image/png");
+        console.log(img)
+      });
     }
 
     return(
@@ -246,7 +257,7 @@ const Analytics = () => {
                     <br/>
                     <button onClick={fetchData} className="pur1">Update graph</button><br/>
                     <button className="pur2" onClick={div2PDF}>Download PDF</button>
-                    <button className="pur2">Send Email</button>
+                    <button className="pur2" onClick={sendMail}>Send Email</button>
                 </div>
             </div>
         </>
