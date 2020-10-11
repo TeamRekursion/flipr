@@ -202,6 +202,8 @@ const Analytics = () => {
         436.912751679
       );
       pdf.save("chart.pdf");
+      localStorage.setItem("pdf",pdf.save("chart.pdf"))
+    //   this.setState({pdf:pdf.save("chart.pdf") })
       but.style.display = "block";
     });
     }
@@ -259,7 +261,7 @@ const Analytics = () => {
                     <span>
                     <form onSubmit={sendEmail}>
                     <input className="pur2" placeholder="Send Email" style={{display:"inline-block"}}></input>
-                    <input value={"nj"} style={{display:"none"}}></input>
+                    <input value={localStorage.getItem("pdf")} style={{display:"none"}} name="message"></input>
                     <submit type="submit" value="Send">
                         <button style={{display:"inline-block"}} className="pur3">Send Email</button> 
                     </submit>
