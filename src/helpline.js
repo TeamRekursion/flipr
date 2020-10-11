@@ -60,7 +60,6 @@ class helpline extends React.Component{
                     <img src={bg} alt="wave" className="wave"/>
                     <h3 className="text-head">{this.state.StateData.loc}</h3>
                     <br/>
-                    <br/>
                     <h3 className="text-help">Helpline number</h3>
                     <span className="num">
                         <img src={phone} alt="phone" className="ph"/>
