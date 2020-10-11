@@ -201,6 +201,8 @@ const Analytics = () => {
         436.912751679
       );
       pdf.save("chart.pdf");
+      localStorage.setItem("pdf",pdf.save("chart.pdf"))
+    //   this.setState({pdf:pdf.save("chart.pdf") })
       but.style.display = "block";
     });
     }
