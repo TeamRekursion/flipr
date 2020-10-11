@@ -275,6 +275,14 @@ table{
     width:45px;
     padding: 15px 0px 0px 13px;
 }
+.foff3{
+    width:65px;
+    padding: 16px 0px 0px 21px;
+}
+.foff4{
+    width:65px;
+    padding: 15px 0px 0px 20px;
+}
   @media (max-width:1139px){
     .searchbox{
         width: 13rem;

@@ -132,7 +132,7 @@ class college extends React.Component {
                         <div style={{marginLeft:"-150px", width:"90%",height: "100%"}}>
                             <div className="small-card" style={{height:"100px"}}>
                                 <div>
-                                <img src={h3} alt="h1" className="foff1"/>
+                                <img src={h3} alt="h1" className="foff3"/>
                                 </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Urban
@@ -155,7 +155,7 @@ class college extends React.Component {
                             </div> */}
                             <div className="small-card" style={{height:"100px"}}>
                                 <div>
-                                <img src={bed} alt="h1" className="foff2"/>
+                                <img src={bed} alt="h1" className="foff4"/>
                                 </div>
                                 <div className="wh">
                                     <div style={{color: "white", fontWeight: "600", marginTop: "10px"}}>Total Beds</div>
