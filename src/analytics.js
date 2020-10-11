@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
 import states from './statesList'
 import html2canvas from "html2canvas";
-import jspdf from "jspdf"
+import jspdf from "jspdf";
 //eslint-disable-next-line
 const addDays = (date, days) => {
     date = new Date(date);
@@ -10,7 +10,16 @@ const addDays = (date, days) => {
     return date;
 }
 
+// function sendEmail(e) {
+//     e.preventDefault();
 
+//     emailjs.sendForm('gmail', 'template_ly5vh7q', e.target, 'user_Ix092PPpo22T70uwxsqkZ')
+//       .then((result) => {
+//           console.log(result.text);
+//       }, (error) => {
+//           console.log(error.text);
+//       });
+//   }
 
 const Analytics = () => {
 
@@ -200,11 +209,33 @@ const Analytics = () => {
         const but = e.target;
     but.style.display = "none";
     let input = window.document.getElementsByClassName("ana")[0];
-    html2canvas(input).then(canvas => {
+    html2canvas(input).then(async canvas => {
         const img = canvas.toDataURL("image/png");
-        console.log(img)
+        const len = img.length
+        const file = (img.slice(22));
+        let email = prompt("Please enter your email address!");
+        const payload = {
+            file,
+            email
+        }
+        try {
+            let response = await fetch("https://apiflipprvithack.herokuapp.com/api/patients/send/email", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                body: JSON.stringify(payload)
+            })
+            console.log(await response.json())
+
+        } catch (e) {
+            alert("sorry we were unable to send you the email!")
+            return
+        }
       });
-    }
+    
+}
 
     return(
         <>
@@ -253,8 +284,7 @@ const Analytics = () => {
                         {getStateOptions()}
                     </select>
 
-                    <br/>
-                    <br/>
+                    
                     <button onClick={fetchData} className="pur1">Update graph</button><br/>
                     <button className="pur2" onClick={div2PDF}>Download PDF</button>
                     <button className="pur2" onClick={sendMail}>Send Email</button>
