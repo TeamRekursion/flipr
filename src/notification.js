@@ -38,7 +38,7 @@ class Notification extends React.Component{
                                         return (
                                             <tr>
                                                 <td className="cha1">{index+1}</td>
-                                                <td><a href={link} className="cha">{title}</a></td>
+                                                <td><a href={link} className="cha" target="_blank" rel="noopener noreferrer">{title}</a></td>
                                             </tr>
                                         )
                                     // return(
