@@ -136,12 +136,12 @@ class hospital extends React.Component{
                                         <td> {this.state.summary["urbanBeds"]}</td>
                                     </tr> */}
                                     <tr>
-                                        <td> Total Hospitals</td>
-                                        <td> {this.state.summary["totalHospitals"]}</td>
+                                        <td style={{fontWeight:"700",color:"white"}}> Total Hospitals</td>
+                                        <td style={{fontWeight:"700",color:" #E78F36"}}> {this.state.summary["totalHospitals"]}</td>
                                     </tr>
                                     <tr>
-                                        <td>Total Beds</td>
-                                        <td>{this.state.summary["totalBeds"]}</td>
+                                        <td style={{fontWeight:"700",color:"white"}}>Total Beds</td>
+                                        <td style={{fontWeight:"700",color:" #E78F36"}}>{this.state.summary["totalBeds"]}</td>
                                     </tr>
                                 </table>
                             </div>
