@@ -3,6 +3,8 @@ import { Line } from 'react-chartjs-2';
 import states from './statesList'
 import html2canvas from "html2canvas";
 import jspdf from "jspdf";
+import emailjs from 'emailjs-com';
+
 //eslint-disable-next-line
 const addDays = (date, days) => {
     date = new Date(date);
@@ -10,7 +12,16 @@ const addDays = (date, days) => {
     return date;
 }
 
+function sendEmail(e) {
+    e.preventDefault();
 
+    emailjs.sendForm('gmail', 'template_ly5vh7q', e.target, 'user_Ix092PPpo22T70uwxsqkZ')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
 
 const Analytics = () => {
 
@@ -242,11 +253,18 @@ const Analytics = () => {
                         {getStateOptions()}
                     </select>
 
-                    <br/>
-                    <br/>
+                    
                     <button onClick={fetchData} className="pur1">Update graph</button><br/>
                     <button className="pur2" onClick={div2PDF}>Download PDF</button>
-                    <button className="pur2">Send Email</button>
+                    <span>
+                    <form onSubmit={sendEmail}>
+                    <input className="pur2" placeholder="Send Email" style={{display:"inline-block"}}></input>
+                    <input value={"nj"} style={{display:"none"}}></input>
+                    <submit type="submit" value="Send">
+                        <button style={{display:"inline-block"}} className="pur3">Send Email</button> 
+                    </submit>
+                    </form>
+                    </span>
                 </div>
             </div>
         </>
