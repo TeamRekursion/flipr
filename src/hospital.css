@@ -2,7 +2,10 @@
     color: #5A80FF;
     padding:70px 0px 0px 70px;
     font-size: 40px;
+    font-family: 'Red Hat Display', sans-serif;
 }
+::-webkit-datetime-edit-fields-wrapper { color: white; }
+::-webkit-inner-spin-button { color: white; }
 h4{
     color: grey;
     padding:0px 0px 0px 70px;
@@ -130,6 +133,10 @@ table{
     border-radius: 8px;
     outline: none;
 }
+/* select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} */
 @media (max-width:1139px){
      .cards{
         grid-template-columns: 1fr;
