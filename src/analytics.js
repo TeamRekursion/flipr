@@ -3,6 +3,8 @@ import { Line } from 'react-chartjs-2';
 import states from './statesList'
 import html2canvas from "html2canvas";
 import jspdf from "jspdf";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
 //eslint-disable-next-line
 const addDays = (date, days) => {
     date = new Date(date);
@@ -29,6 +31,7 @@ const Analytics = () => {
     const [gender, setGender] = useState('')
     const [age, setAge] = useState('')
     const [state, setState] = useState('')
+    const [loader, setloader] = useState(false)
 
 
     useEffect(() => {
@@ -246,6 +249,13 @@ const Analytics = () => {
             </div>
             <div className="grim">
                 <div className="ana">
+                {/* <Loader
+                    type="Puff"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                    timeout={3000} //3 secs
+                /> */}
                     <Line
                         data={data}
                         options={{
@@ -269,6 +279,7 @@ const Analytics = () => {
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                    <br/>
                     <select className="searchbox1" onChange={e=>setAge(e.target.value)}>
                         <option value="">Filter age groups</option>
                         <option value={0}>0 to 9</option>
@@ -280,13 +291,11 @@ const Analytics = () => {
                         <option value={6}>60 to 69</option>
                         <option value={7}>70+</option>
                     </select>
-
+                    <br/>
                     <select placeholder="State" className="searchbox1" onChange={e=>setState(e.target.value)}>
                         <option value="">State</option>
                         {getStateOptions()}
                     </select>
-
-                    
                     <button onClick={fetchData} className="pur1">Update graph</button><br/>
                     <button className="pur2" onClick={div2PDF}>Download PDF</button>
                     <button className="pur2" onClick={sendMail}>Send Email</button>
